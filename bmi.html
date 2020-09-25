@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card-body{
+            background-image: url("https://thedoctorweighsin.com/wp-content/uploads/2017/12/IMG-The-Impact-of-Poor-Communication-on-Medical-Errors.jpg");
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center bg-danger">BMI CALCULATOR</div>
+        <div class="card-body">
+            <form class="w-50 m-auto" onsubmit="return false">
+                <div class="from-group">
+                    <label>Weight</label>
+                    <input type="number" id="weight" class="form-control" placeholder="enter your weight in kg.." required>
+                </div>
+                <div class="from-group">
+                    <label>Height</label>
+                    <input type="text" id="height" class="form-control" placeholder="enter your height in ft.."required>
+                </div>
+                <div class="from-group">
+                    <label>Age</label>
+                    <input type="number" id="age" class="form-control" placeholder="enter your age.." required>
+                </div>
+                <div class="from-group">
+                    <label>Gender</label>
+                    <input type="text" id="gender" class="form-control" placeholder="enter your gender.."required>
+                </div>
+                <div class="from-group">
+                    <label>Bmi result</label>
+                    <input type="text" id="bmi" class="form-control" placeholder="bmi result..">
+                </div>
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-success" onclick="myfun()"> check bmi</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-center bg-danger">A Healthy Bmi Ranges b/w 19 to 25.</div>
+    </div>
+</div>
+<script>
+    function myfun(){
+        var user_weight=document.getElementById("weight").value
+        var user_height=document.getElementById('height').value
+        var user_age=document.getElementById('age').value
+        var user_gender=document.getElementById('gender').value
+        console.log(user_height);
+        if(!(user_weight)){
+            alert('please enter your weight in numbers .!')
+        }else if(!(user_height)){
+            alert('please enter your height in numbers .!')
+        }else if(!(user_age)){
+            alert('please enter your age in numbers .!')
+        }else if(!(user_gender !="male" || user_gender!="female")){
+            alert('please enter in letters.!')
+        }
+        user_height=user_height * 12
+        user_height=user_height * 0.025
+        var new_value=user_weight/(user_height * user_height)
+        var _=Math.round(new_value)
+        document.getElementById("bmi").value=_+" kg/m2 "
+    }
+</script>
+</body>
+</html>
+    
