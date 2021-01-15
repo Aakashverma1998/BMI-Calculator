@@ -1,2 +1,2 @@
 # BMI-Calculator
-In this BMI(Body Mass & Index) Calculator. I have created with html,css and javascript.Basically body mass index shows current health status.
+In this BMI(Body Mass & Index) Calculator. I have created with HTML, CSS, and javascript. Basically, the body mass index shows the current health status.
